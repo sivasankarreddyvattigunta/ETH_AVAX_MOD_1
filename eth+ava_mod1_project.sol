@@ -5,8 +5,8 @@ contract siva {
     uint public x;
     address public owner;
 
-    modifier greaterThanZero(uint Value) {
-        require(Value > 0, "Value must be greater than zero");
+    modifier greaterThanThree(uint Value) {
+        require(Value > 3, "Value must be greater than Three");
         _;
     }
 
@@ -24,7 +24,7 @@ contract siva {
         owner = msg.sender;
     }
 
-    function setValue(uint NewValue) public greaterThanZero(NewValue) lessThanTen(NewValue) onlyOwner {
+    function data(uint NewValue) public greaterThanThree(NewValue) lessThanTen(NewValue) onlyOwner {
         x = NewValue;
     }
 
